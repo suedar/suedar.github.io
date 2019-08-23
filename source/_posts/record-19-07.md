@@ -1,11 +1,13 @@
 ---
-title: record-19-07
+title: record-19-07～19-08
 date: 2019-07-24 18:47:21
 tags:
 ---
 
 
-### void
+### 7.24
+
+void
 
 1. 箭头函数的void用法
 
@@ -23,3 +25,7 @@ This ensures the return value of doSomething changing from undefined to true wil
 
 2. void 可代指未被操作的原始值
 某种程度上来说 `void 0 === undefined`
+
+### 8.5
+
+vue2.0貌似不能让localhost被占用才可以开启其他域名的网页？

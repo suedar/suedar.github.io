@@ -8,7 +8,7 @@ subtitle:
 description:
 keywords:
 author: suedar
-language:
+language: zh-CN
 timezone:
 
 # URL
@@ -74,10 +74,16 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
-
+scheme: Gemini
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repository: https://github.com/suedar/suedar.github.io.git
   branch: master
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
