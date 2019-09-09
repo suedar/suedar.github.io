@@ -229,6 +229,433 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/vue小记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suedar">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="suedar">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/23/vue小记/" itemprop="url">vue小记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T20:40:06+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          使用vue也有一段时间了，现在对vue的一些以前没有注意到的点小结一番~
+本文均采用npm安装依赖
+json-server数据存储的利器啊，我之前是采用easy-mock，遗憾的是其只能使用get请求。
+在json-server中 我们采用npm install -g json-server安装依赖。
+在最外层文件新建mock文件，下建db.json
+
+然后采用json格式输入数据123456789&#123;  "posts": [    &#123; "id": 1, "title": "json-server", "author": "typicode" &#125;  ],  "comments": [    &#123; "id": 1, "body": "some comment", "postId": 1 &#125;  ],  "profile": &#123; "name": "typicode" &#125;&#125;
+然后改改script，在package.json中，修改script
+1234567"scripts": &#123;    "dev": "we
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/23/vue小记/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/js基础之关于Boolean及相等运算符的隐式类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suedar">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="suedar">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/01/js基础之关于Boolean及相等运算符的隐式类型转换/" itemprop="url">js基础之关于Boolean及相等运算符的隐式类型转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-01T20:36:53+08:00">
+                2017-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Boolean函数根据 w3c规范 布尔对象共有这几种方法：
+
+
+
+方法
+描述
+
+
+
+
+toSource()
+返回该对象的源代码。
+
+
+toString()
+把逻辑值转换为字符串，并返回结果。
+
+
+valueOf()
+返回 Boolean 对象的原始值。
+
+
+
+布尔值常用于JavaScript中的控制语句中。例如JavaScript的if/else语句，如果布尔值为true执行第一段逻辑，如果为false执行另一段逻辑。
+JavaScript的值都可以转化为布尔值，下面这些值会被转换为false：123456undefinednull0-0NaN""//空字符串
+所有其他值，包括所有的对象（数组）都会转化为true。
+也就是说：12var c = Boolean([]);console.log(c); // true
+结果为真。
+
+boolean应用Boolean常常应用的有两种，一种是if(a==b)?，一种是if(o)？。
+
+if（o）？对于第二种，只要当o不是false，null和undefined时就会执行if之后的代码。也就是说 if({}&amp;&amp;[])，为真。
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/01/js基础之关于Boolean及相等运算符的隐式类型转换/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/29/js基础之各种基本类型及引用类型的转换之开篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suedar">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="suedar">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/29/js基础之各种基本类型及引用类型的转换之开篇/" itemprop="url">js基础之各种基本类型及引用类型的转换之开篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-29T20:35:22+08:00">
+                2017-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            总结一下前端基础的东西，估计会开一个专题，讲的是布尔等基本类型和引用类型等的相互转换问题。
+  基础不能丢啊，建议看了这个专题的读者也去总结一些前端的基础，好记性不如烂笔头，代码会更新在GitHub。
+ 文章大部分内容来自于《JavaScript权威指南》《JavaScript高级程序设计》再加上我最近的总结和理解。
+那么我们开始吧。
+  提起伟大的JavaScript，就不得不提起他的数据类型，JavaScript的数据类型分为两类：原始类型（primitive type) 和 对象类型（object type）。  而对象类型 又可以叫做引用类型。所有引用类型都是Object 的实例。
+
+碎碎念：伟大的JavaScript由ECMAscript，BOM和DOM组成，而ECMAscript为核心中的核心，BOM（browse object model）为浏览器对象模型，DOM（document object model）为文档对象模型，因为是核心，所以有时我们也称JavaScript数据类型为ECMAscript数据类型。
+
+
+原始类型有六种：Undefined，Null，Boo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/js基础之各种基本类型及引用类型的转换之开篇/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/仿写简单的vue虚拟dom/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -392,7 +819,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
