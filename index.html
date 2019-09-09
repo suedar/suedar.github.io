@@ -300,7 +300,7 @@
       
         
           
-          这几天做了一个需求，读取上传的公私钥，然后利用私钥采用rsa加密摘要，发送给后端。其中运用到了base64的加解密，rsa加密采用的是node的Crypto模块，base64的转码采用的是js-base64, 然而万万没有想到，这里面有坑啊。
+          这几天做了一个需求，读取上传的公私钥，然后利用私钥采用RSA加密摘要，发送给后端。其中运用到了base64的加解密，RSA加密采用的是node的Crypto模块，base64的转码采用的是js-base64, 然而万万没有想到，这里面有坑啊。
 （开个玩笑，这个库还是很不错的）
 文件的读取首先是文件的读取，采用的是FileReader, 并且二进制文件的读取应为readAsArrayBuffer，否则会乱码。123456789readFile(file) &#123;    return new Promise((resolve, reject) =&gt; &#123;        const reader = new FileReader();        reader.onload = function(evt) &#123;            resolve(evt.target.result)        &#125;;        reader.readAsArrayBuffer(file);    &#125;)&#125;
 从这里读取到的数据,调用Object
