@@ -1,10 +1,3 @@
-<!--
- * @file: 
- * @author: sunchao(sunchao15@baidu.com)
- * @Date: 2019-08-05 14:17:01
- * @LastEditors: sunchao
- * @LastEditTime: 2019-08-11 14:32:37
- -->
 ---
 title: 前端历史小记（该文作废）
 date: 2019-08-05 14:17:01
