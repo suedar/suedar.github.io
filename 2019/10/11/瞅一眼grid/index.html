@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="两个周末都搭在promise上面啦，所以总结一下吧。 promise1promise2errorpromise1promise2successerror setTimeout(() =&amp;gt; {console.log(‘once’)resolve(‘success’)}, 1000) a = new Promise((resolve, reject) =&amp;gt; {  setTimeout(()">
+<meta name="description" content="grid属性总记不住，故总结此文，代码戳图片标题看哦～  首先看一个栗子🌰 图1 🌰 这是我之前做的博客，数据是mock的，anyway，在grid网格布局出现以前，假如我们要做这么一个博客，是要考虑非常多的布局因素的，这个页面是明显的header + content + footer的一个布局（footer没截到），而content区域是一个三栏布局。假如内容区原本通过固定宽度并margi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="再谈promise">
-<meta property="og:url" content="http://yoursite.com/2019/08/24/再谈promise/index.html">
+<meta property="og:title" content="瞅一眼grid(弃文)">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/瞅一眼grid/index.html">
 <meta property="og:site_name" content="suedar">
-<meta property="og:description" content="两个周末都搭在promise上面啦，所以总结一下吧。 promise1promise2errorpromise1promise2successerror setTimeout(() =&amp;gt; {console.log(‘once’)resolve(‘success’)}, 1000) a = new Promise((resolve, reject) =&amp;gt; {  setTimeout(()">
+<meta property="og:description" content="grid属性总记不住，故总结此文，代码戳图片标题看哦～  首先看一个栗子🌰 图1 🌰 这是我之前做的博客，数据是mock的，anyway，在grid网格布局出现以前，假如我们要做这么一个博客，是要考虑非常多的布局因素的，这个页面是明显的header + content + footer的一个布局（footer没截到），而content区域是一个三栏布局。假如内容区原本通过固定宽度并margi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-09T16:33:16.009Z">
+<meta property="og:image" content="https://blog1.cdn.bcebos.com/grid%2Fa.png">
+<meta property="og:image" content="https://blog1.cdn.bcebos.com/grid%2Fc.png">
+<meta property="og:image" content="https://blog1.cdn.bcebos.com/grid%2Fb.png">
+<meta property="og:updated_time" content="2019-10-11T11:41:07.080Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="再谈promise">
-<meta name="twitter:description" content="两个周末都搭在promise上面啦，所以总结一下吧。 promise1promise2errorpromise1promise2successerror setTimeout(() =&amp;gt; {console.log(‘once’)resolve(‘success’)}, 1000) a = new Promise((resolve, reject) =&amp;gt; {  setTimeout(()">
+<meta name="twitter:title" content="瞅一眼grid(弃文)">
+<meta name="twitter:description" content="grid属性总记不住，故总结此文，代码戳图片标题看哦～  首先看一个栗子🌰 图1 🌰 这是我之前做的博客，数据是mock的，anyway，在grid网格布局出现以前，假如我们要做这么一个博客，是要考虑非常多的布局因素的，这个页面是明显的header + content + footer的一个布局（footer没截到），而content区域是一个三栏布局。假如内容区原本通过固定宽度并margi">
+<meta name="twitter:image" content="https://blog1.cdn.bcebos.com/grid%2Fa.png">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/24/再谈promise/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/11/瞅一眼grid/">
 
 
 
 
 
-  <title>再谈promise | suedar</title>
+  <title>瞅一眼grid(弃文) | suedar</title>
   
 
 
@@ -232,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/24/再谈promise/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/瞅一眼grid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="suedar">
@@ -249,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">再谈promise</h1>
+          <h1 class="post-title" itemprop="name headline">瞅一眼grid(弃文)</h1>
         
 
         <div class="post-meta">
@@ -261,8 +265,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-24T17:18:40+08:00">
-                2019-08-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-11T18:21:13+08:00">
+                2019-10-11
               </time>
             
 
@@ -299,15 +303,25 @@
       
 
       
-        <p>两个周末都搭在promise上面啦，所以总结一下吧。</p>
-<p>promise1<br>promise2<br>error<br>promise1<br>promise2<br>success<br>error</p>
-<p>setTimeout(() =&gt; {<br>console.log(‘once’)<br>resolve(‘success’)<br>}, 1000)</p>
-<p>a = new Promise((resolve, reject) =&gt; {<br>  setTimeout(() =&gt; {<br>    console.log(‘once’)<br>    resolve(‘success’)<br>  }, 1000)<br>  console.log(555)<br>})<br>console.log(12333)<br>v = Date.now()<br>a.then((res) =&gt; {<br>  console.log(res, Date.now() - v)<br>})<br>a.then((res) =&gt; {<br>  console.log(res, Date.now() - v)<br>})</p>
-<p>setTimeout(() =&gt; {<br>    console.log(9999)<br>})</p>
-<p>new Promise((resolve, reject) =&gt; {<br>    resolve(3)<br>}).then(a =&gt; {<br>    console.log(a)<br>})</p>
-<p>setTimeout(() =&gt; {<br>    console.log(1)<br>})</p>
-<p>new Promise((resolve, reject) =&gt; {<br>    console.log(2);<br>    resolve(3)<br>}).then(res =&gt; {<br>    console.log(res)<br>})</p>
-<p>console.log(4)</p>
+        <blockquote>
+<p>grid属性总记不住，故总结此文，代码戳图片标题看哦～</p>
+</blockquote>
+<p>首先看一个栗子🌰</p>
+<p><img src="https://blog1.cdn.bcebos.com/grid%2Fa.png" alt="博客"><br><b><center>图1 🌰</center></b></p>
+<p>这是我之前做的博客，数据是mock的，anyway，在<code>grid网格布局</code>出现以前，假如我们要做这么一个博客，是要考虑非常多的布局因素的，这个页面是明显的<code>header + content + footer</code>的一个布局（footer没截到），而<code>content区域</code>是一个三栏布局。假如内容区原本通过固定宽度并<code>margin居中</code>的话，右侧的推荐栏要加上是非常麻烦的，但是在<code>grid布局</code>中实现就非常便利啦，只要在子元素设置<code>grid-column</code>即可。</p>
+<p></p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="suedar" data-slug-hash="yLLYGbG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="grid"><br>  <span>See the Pen <a href="https://codepen.io/suedar/pen/yLLYGbG" target="_blank" rel="noopener"><br>  grid</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)<br>  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span><br></p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p>是时候学习<code>grid</code>了~</p>
+<h1 id="grid"><a href="#grid" class="headerlink" title="grid"></a>grid</h1><p><img src="https://blog1.cdn.bcebos.com/grid%2Fc.png" alt="grid"><br><b><center>图3 Grid属性汇总</center></b></p>
+<p><code>grid网格布局</code>是一种二维布局，其将页面划分为一个个网格，通过行(<code>column</code>)和列(<code>row</code>)的巧妙组合，构成响应式的页面。</p>
+<p><img src="https://blog1.cdn.bcebos.com/grid%2Fb.png" alt="网格"><br><b><center>图4 网格</center></b></p>
+<p>截止2017年，大多数浏览器都已经支持这个布局。（想康康兼容性戳<a href="https://caniuse.com/#search=grid" target="_blank" rel="noopener">这里</a>）</p>
+<p>grid有作用在容器上以及子元素上面的属性。</p>
+<p>阮大大写的真详细 弃文。。。</p>
+<blockquote>
+<p><a href="https://www.html.cn/archives/8510/" target="_blank" rel="noopener">CSS Grid 布局完全指南(图解 Grid 详细教程)</a><br><br><a href="https://codepen.io/mor10/pen/NjeqyX" target="_blank" rel="noopener">grid的一个示例</a><br><br><a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener">CSS Grid 网格布局教程</a></p>
+</blockquote>
 
       
     </div>
@@ -332,8 +346,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/11/Json-server-mockjs模拟假数据/" rel="next" title="Json-server + mockjs模拟假数据">
-                <i class="fa fa-chevron-left"></i> Json-server + mockjs模拟假数据
+              <a href="/2019/10/09/文章/" rel="next" title="文章">
+                <i class="fa fa-chevron-left"></i> 文章
               </a>
             
           </div>
@@ -341,10 +355,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/10/记一次手忙脚乱的base64debug之旅/" rel="prev" title="记一次手忙脚乱的base64debug之旅">
-                记一次手忙脚乱的base64debug之旅 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -396,8 +406,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -448,6 +467,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#grid"><span class="nav-number">1.</span> <span class="nav-text">grid</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
