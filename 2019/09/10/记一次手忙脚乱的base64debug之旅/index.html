@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="debug,">
 
 
 
@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="这几天做了一个需求，读取上传的公私钥，然后利用私钥采用RSA加密摘要，发送给后端。其中运用到了base64的加解密，RSA加密采用的是node的Crypto模块，base64的转码采用的是js-base64, 然而万万没有想到，这里面有坑啊。 （开个玩笑，这个库还是很不错的） 文件的读取首先是文件的读取，采用的是FileReader, 并且二进制文件的读取应为readAsArrayBuffer，否">
+<meta name="keywords" content="debug">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次手忙脚乱的base64debug之旅">
 <meta property="og:url" content="http://yoursite.com/2019/09/10/记一次手忙脚乱的base64debug之旅/index.html">
@@ -87,7 +88,7 @@
 <meta property="og:description" content="这几天做了一个需求，读取上传的公私钥，然后利用私钥采用RSA加密摘要，发送给后端。其中运用到了base64的加解密，RSA加密采用的是node的Crypto模块，base64的转码采用的是js-base64, 然而万万没有想到，这里面有坑啊。 （开个玩笑，这个库还是很不错的） 文件的读取首先是文件的读取，采用的是FileReader, 并且二进制文件的读取应为readAsArrayBuffer，否">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/9/9/16d169612d63f39a?w=123&h=109&f=jpeg&s=10462">
-<meta property="og:updated_time" content="2019-10-11T11:50:45.092Z">
+<meta property="og:updated_time" content="2019-10-11T12:18:15.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次手忙脚乱的base64debug之旅">
 <meta name="twitter:description" content="这几天做了一个需求，读取上传的公私钥，然后利用私钥采用RSA加密摘要，发送给后端。其中运用到了base64的加解密，RSA加密采用的是node的Crypto模块，base64的转码采用的是js-base64, 然而万万没有想到，这里面有坑啊。 （开个玩笑，这个库还是很不错的） 文件的读取首先是文件的读取，采用的是FileReader, 并且二进制文件的读取应为readAsArrayBuffer，否">
@@ -304,6 +305,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -367,6 +390,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/debug/" rel="tag"># debug</a>
+          
+        </div>
+      
 
       
       
@@ -386,8 +415,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/09/文章/" rel="prev" title="文章">
-                文章 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/09/文章/" rel="prev" title="文章推荐">
+                文章推荐 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -478,7 +507,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -489,7 +518,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
