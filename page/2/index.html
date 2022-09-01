@@ -272,6 +272,220 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/你需要知道的浮动二三事/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suedar">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="suedar">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/20/你需要知道的浮动二三事/" itemprop="url">你需要知道的浮动二三事</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-20T19:36:39+08:00">
+                2019-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>先来看两个栗子🌰</p>
+
+<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="suedar" data-slug-hash="BbOVgG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="浮动示例一">
+  <span>See the Pen <a href="https://codepen.io/suedar/pen/BbOVgG/" target="_blank" rel="noopener">
+  浮动示例一</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)
+  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<center>example 1</center>
+
+
+<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="suedar" data-slug-hash="jJvvNV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="浮动示例二">
+  <span>See the Pen <a href="https://codepen.io/suedar/pen/jJvvNV/" target="_blank" rel="noopener">
+  浮动示例二</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)
+  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<center>example 2</center>
+
+<p>这是两个非常能体现浮动特性的例子。</p>
+<p>在<code>emample 1</code>中，设置左侧元素<code>.red</code>定宽并浮动，不管<code>.text</code>在内部还是外部，都会发现<code>.text</code>是绕着浮动元素的,此时设置右侧元素<code>margin-left</code>生效，<code>margin-top</code>失效。<br><br>(图片下面的空隙是基线问题，这是另一个话题了</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">vertical-align</span>: bottom;</span><br><span class="line">  .red &#123;</span><br><span class="line">    <span class="selector-tag">width</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">background</span>: <span class="selector-tag">red</span>;</span><br><span class="line">    <span class="selector-tag">float</span>: <span class="selector-tag">left</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如有需要可以这么设置)</p>
+<p>在<code>example 2</code>中，设置内部元素<code>.red</code>为浮动后，并设置父级元素<code>.father</code>边框<code>border: 10px solid grey;</code>会发现，父级元素并没有包裹住子元素，高度坍塌。</p>
+<p>也就是说设置float会导致水平线上占位，垂直线上高度坍塌，而这个坍塌只限于浮动元素高度范围内。</p>
+<p><img src="https://blog1.cdn.bcebos.com/WechatIMG33.jpg" alt></p>
+<h2 id="float定义"><a href="#float定义" class="headerlink" title="float定义"></a>float定义</h2><p>根据<a href="https://developer.mozilla.org/zh-CN/docs/CSS/float" target="_blank" rel="noopener">mdn</a>对float的定义。</p>
+<blockquote>
+<p><code>float</code> CSS属性指定一个元素应沿其容器的左侧或右侧放置，允许文本和内联元素环绕它。该元素从网页的正常流动(文档流)中移除，尽管仍然保持部分的流动性（与绝对定位相反）。<br><br><br>一个浮动元素是<code>float</code>的值不是<code>none</code>的元素。</p>
+</blockquote>
+<p>从<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/Stacking_and_float" target="_blank" rel="noopener">层叠与浮动</a>中可以看出，我们可以把<code>document</code>视为三维的模型，尽管<code>float</code>元素脱离了文档流，但是从二维视角上看上去，其仍然占位。</p>
+<p><img src="https://blog1.cdn.bcebos.com/1.png" alt></p>
+<p>在很久很久很久很久以前，<code>文字环绕效果</code>还非常地流行，为了实现这个效果，当时的程序员们突发灵感，发明出了<code>float</code>，文字不会环绕是吧，破坏文档流啊，暴力可以解决一切问题🐶，但是随着时代的发展，渐渐的带来了一些问题。</p>
+<h2 id="float特性"><a href="#float特性" class="headerlink" title="float特性"></a>float特性</h2><ul>
+<li>父级元素高度坍塌(包裹性)</li>
+<li>限制行框盒子</li>
+<li>块状化</li>
+</ul>
+<h3 id="硬核做需求"><a href="#硬核做需求" class="headerlink" title="硬核做需求"></a>硬核做需求</h3><p>实现父级元素坍塌后，只是让跟随的内容可以和浮动元素在一个水平线上，但这只是实现<code>环绕效果</code>的条件之一，还需要另外一个特性，就是<code>行框元素和浮动元素的不可重叠性</code>，也就是<code>行框元素如果和浮动元素垂直高度有重叠，则行框盒子在正常定位情况下只会跟随浮动元素，不会发生重叠</code>。</p>
+<p>证实这一点请看这里。</p>
+<p></p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="suedar" data-slug-hash="KExrxM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="浮动示例三"><br>  <span>See the Pen <a href="https://codepen.io/suedar/pen/KExrxM/" target="_blank" rel="noopener"><br>  浮动示例三</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)<br>  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span><br></p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p>可以看到，我们设置另一个元素<code>.yellow</code>进入浮动区域的时候，被推开了。</p>
+<h3 id="块状化"><a href="#块状化" class="headerlink" title="块状化"></a>块状化</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> span = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(span);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>, <span class="built_in">window</span>.getComputedStyle(span).display);</span><br><span class="line">span.style.cssFloat=<span class="string">"left"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>, <span class="built_in">window</span>.getComputedStyle(span).display);</span><br></pre></td></tr></table></figure>
+<p>在console中，我们可以得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 &quot;inline&quot;</span><br><span class="line">2 &quot;block&quot;</span><br></pre></td></tr></table></figure></p>
+<p>证明设置float的元素，会变成块级元素。</p>
+<p><img src="https://blog1.cdn.bcebos.com/2.png" alt></p>
+<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p>讲了定义，讲了问题，来看看怎么解决问题吧。清除浮动，其实就是在清除浮动带来的影响。</p>
+<ul>
+<li>clear</li>
+<li>触发BFC</li>
+</ul>
+<p>我了解的有这么几种方法，欢迎补充。</p>
+<h3 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h3><p>根据clear的<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/clear" target="_blank" rel="noopener">定义</a></p>
+<blockquote>
+<p><code>clear</code> CSS 属性指定一个元素是否必须移动(清除浮动后)到在它之前的浮动元素下面。clear 属性适用于浮动和非浮动元素。</p>
+</blockquote>
+<p>也就是换行显示文字。换行了，就不会触发<code>行框元素和浮动元素的不可重叠性</code>。</p>
+<h4 id="添加空元素"><a href="#添加空元素" class="headerlink" title="添加空元素"></a>添加空元素</h4><p>在浮动元素下方添加一个内容为空的元素，并设置<code>clear:both</code>。</p>
+<p></p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="suedar" data-slug-hash="MxqLeZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="MxqLeZ"><br>  <span>See the Pen <a href="https://codepen.io/suedar/pen/MxqLeZ/" target="_blank" rel="noopener"><br>  MxqLeZ</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)<br>  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span><br></p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h4 id="父级添加伪元素"><a href="#父级添加伪元素" class="headerlink" title="父级添加伪元素"></a>父级添加伪元素</h4><p>在父级添加<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&amp;<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种方法成为<code>clearfix</code>。</p>
+<p></p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="suedar" data-slug-hash="MxqLeZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="MxqLeZ"><br>  <span>See the Pen <a href="https://codepen.io/suedar/pen/MxqLeZ/" target="_blank" rel="noopener"><br>  MxqLeZ</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)<br>  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span><br></p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="触发BFC"><a href="#触发BFC" class="headerlink" title="触发BFC"></a>触发BFC</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener"><code>块级格式化上下文（Block Formatting Context，BFC）</code></a>是Web页面的可视化CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。</p>
+<p>如果一个元素具有<code>BFC</code>，内部子元素不管再怎么变化，都不会影响外部的元素。</p>
+<p><img src="https://blog1.cdn.bcebos.com/3.png" alt></p>
+<h4 id="BFC特性"><a href="#BFC特性" class="headerlink" title="BFC特性"></a>BFC特性</h4><p>那么BFC有什么特性呢？</p>
+<ol>
+<li>内部的Box会在垂直方向，一个接一个地放置。</li>
+<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。</li>
+<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。<code>(解决限制行框盒子)</code></li>
+<li>BFC的区域不会与float box重叠。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>计算BFC的高度时，浮动元素也参与计算</li>
+</ol>
+<p>也就是说，在BFC的世界中，有一个结界，又有许多规则，BFC和外部世界隔离开，同时内部的所有元素都遵循同个规则来布局，无论是否浮动。</p>
+<h4 id="BFC-float应用"><a href="#BFC-float应用" class="headerlink" title="BFC+float应用"></a>BFC+float应用</h4><p>左侧定宽，右侧自适应的两栏布局，你值得拥有。</p>
+
+<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html,result" data-user="suedar" data-slug-hash="bZxyqv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="浮动示例六">
+  <span>See the Pen <a href="https://codepen.io/suedar/pen/bZxyqv/" target="_blank" rel="noopener">
+  浮动示例六</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)
+  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><blockquote>
+<p><a href="https://zhuqingguang.github.io/2017/08/16/adapting-two-layout/" target="_blank" rel="noopener">七种实现左侧固定，右侧自适应两栏布局的方法</a> <br><br><a href="https://juejin.im/post/5909db2fda2f60005d2093db" target="_blank" rel="noopener">[布局概念] 关于CSS-BFC深入理解</a><br><br><a href="https://www.cnblogs.com/hongru/archive/2010/10/06/1844855.html" target="_blank" rel="noopener">关于浮动与清除浮动</a> <br><br>《css世界》</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/record-19-03~04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1385,7 +1599,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
