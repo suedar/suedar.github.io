@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="总结一下前端基础的东西，估计会开一个专题，讲的是布尔等基本类型和引用类型等的相互转换问题。   基础不能丢啊，建议看了这个专题的读者也去总结一些前端的基础，好记性不如烂笔头，代码会更新在GitHub。  文章大部分内容来自于《JavaScript权威指南》《JavaScript高级程序设计》再加上我最近的总结和理解。 那么我们开始吧。   提起伟大的JavaScript，就不得不提起他的数据类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js基础之各种基本类型及引用类型的转换之开篇">
+<meta property="og:url" content="http://yoursite.com/2017/11/29/js基础之各种基本类型及引用类型的转换之开篇/index.html">
+<meta property="og:site_name" content="suedar">
+<meta property="og:description" content="总结一下前端基础的东西，估计会开一个专题，讲的是布尔等基本类型和引用类型等的相互转换问题。   基础不能丢啊，建议看了这个专题的读者也去总结一些前端的基础，好记性不如烂笔头，代码会更新在GitHub。  文章大部分内容来自于《JavaScript权威指南》《JavaScript高级程序设计》再加上我最近的总结和理解。 那么我们开始吧。   提起伟大的JavaScript，就不得不提起他的数据类">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://img.blog.csdn.net/20171129223541311?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VlZGFyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171129225519184?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VlZGFyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171129231649391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VlZGFyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2022-09-01T01:40:52.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js基础之各种基本类型及引用类型的转换之开篇">
+<meta name="twitter:description" content="总结一下前端基础的东西，估计会开一个专题，讲的是布尔等基本类型和引用类型等的相互转换问题。   基础不能丢啊，建议看了这个专题的读者也去总结一些前端的基础，好记性不如烂笔头，代码会更新在GitHub。  文章大部分内容来自于《JavaScript权威指南》《JavaScript高级程序设计》再加上我最近的总结和理解。 那么我们开始吧。   提起伟大的JavaScript，就不得不提起他的数据类">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171129223541311?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VlZGFyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/29/js基础之各种基本类型及引用类型的转换之开篇/">
+
+
+
+
+
+  <title>js基础之各种基本类型及引用类型的转换之开篇 | suedar</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?04acd03f2862eda6ef92ca8e9870077f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">suedar</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/29/js基础之各种基本类型及引用类型的转换之开篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suedar">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="suedar">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js基础之各种基本类型及引用类型的转换之开篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-29T20:35:22+08:00">
+                2017-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>  总结一下前端基础的东西，估计会开一个专题，讲的是布尔等基本类型和引用类型等的相互转换问题。</p>
+<p>  基础不能丢啊，建议看了这个专题的读者也去总结一些前端的基础，好记性不如烂笔头，代码会更新在<a href="https://github.com/suedar/js-" target="_blank" rel="noopener">GitHub</a>。</p>
+<p> 文章大部分内容来自于《JavaScript权威指南》《JavaScript高级程序设计》再加上我最近的总结和理解。</p>
+<p>那么我们开始吧。</p>
+<p>  提起伟大的JavaScript，就不得不提起他的数据类型，JavaScript的数据类型分为两类：<font color="red">原始类型（primitive type)</font> 和 <font color="red">对象类型（object type）</font>。<br>  而对象类型 又可以叫做引用类型。<br>所有引用类型都是Object 的实例。</p>
+<blockquote>
+<p>碎碎念：伟大的JavaScript由ECMAscript，BOM和DOM组成，而ECMAscript为核心中的核心，BOM（browse object model）为浏览器对象模型，DOM（document object model）为文档对象模型，因为是核心，所以有时我们也称JavaScript数据类型为ECMAscript数据类型。</p>
+</blockquote>
+<hr>
+<p>原始类型有六种：Undefined，Null，Boolean，Number ，String 和 Symbol。<br>而Symbol是es6新引入的基本数据类型，表示独一无二的值。</p>
+<p>关于Symbol具体看看阮大大吧</p>
+<blockquote>
+<p><a href="http://es6.ruanyifeng.com/#docs/symbol" target="_blank" rel="noopener">http://es6.ruanyifeng.com/#docs/symbol</a></p>
+</blockquote>
+<p>本专题还没囊括symbol。。待我日后补充。。</p>
+<p>剩余的都是对象类型。</p>
+<p>引用类型的值是保存在内存中的对象。</p>
+<hr>
+<p>造了有这么些基本类型，那咱得有工具把他们几个区分出来啊</p>
+<p>于是ECMAscript给了我们typeof工具。</p>
+<p><img src="http://img.blog.csdn.net/20171129223541311?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VlZGFyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="图图图"></p>
+<p>（本图并不是直接连接，只是隐性关系）</p>
+<p>由该图可知 typeof 没有null 没有null 没有null</p>
+<p>这是头条17年前端面试的一道题哦</p>
+<p>另外    <code>typeof(null) = object</code></p>
+<p>因为null被认为是一个空对象的引用。</p>
+<p>Safari 5及以前版本、chrome 7 及之前版本对正则表达式调用typeof操作符会返回function，而其他浏览器会返回object。</p>
+<p>关于浏览器兼容问题 可以访问 <a href="https://caniuse.com/" target="_blank" rel="noopener">can i  use</a></p>
+<hr>
+<p>另外string，数字、布尔值、null和underfined属于不可变类型，不能改变他们。<br>es6的常量 const 也是如此。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"你今天很好看"</span>;</span><br><span class="line">a.length = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20171129225519184?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VlZGFyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="不容置喙"></p>
+<p>a.length正常会改变字符串的长度，也就是会把结果变为 你今 ，但是 在这却失效了，这是为什么呢。</p>
+<p>a是一个字符串，字符串当然是基本类型值，而下一步的调用却成功了。我们知道，基本类型值不是对象，因为从逻辑上来说他们不该有方法。因此正常来讲a.length会报错呀会报错呀会报错呀</p>
+<p>其实，为了让我们实现这种直观的操作，后台已经自动完成了一系列的处理，当第二行代码执行到a.length时，访问过程处于一种读取模式，也就是要从内存读取这个字符串的值，而在读取模式中访问字符串时，后台就会进行如下处理</p>
+<blockquote>
+<p>（1）创建string类型的一个实例；<br>（2）在实例上调用该方法；<br>（3）销毁这个实例</p>
+</blockquote>
+<p>也就是说</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"你今天真好看"</span>);</span><br><span class="line">a.length = <span class="number">2</span>;</span><br><span class="line">a = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<p>这是在执行a.length的一瞬间后台进行的操作。</p>
+<p><img src="http://img.blog.csdn.net/20171129231649391?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VlZGFyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p> Boolean Number 和String为ECMAscript的基本包装类型。</p>
+<blockquote>
+<p>引用类型和基本包装类型的主要区别在于对象的生存期，使用new操作符创造的引用类型的实例，在执行流离开当前作用域之前一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后立即被销毁。这意味着我们不能在运行时为基本数据类型添加属性和方法。</p>
+</blockquote>
+<p>我们可以显示调用Boolean，Number和String来创建基本包装类型的对象。不过，应该在必要的情况下再这么做，因为这种做法很容易让人分不清自己实在处理基本类型还是引用类型的值。对基本包装类型的实例调用typeof会返回object，而且所以基本包装类型的对象在转化为布尔值时的值都是true。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="string">"25"</span>;</span><br><span class="line"><span class="keyword">var</span> number = <span class="built_in">Number</span>(value); </span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(number)); <span class="comment">//"number"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Number</span>(value);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(obj));  <span class="comment">//"object"</span></span><br></pre></td></tr></table></figure>
+<p>好啦 开篇就说到这里，做个好梦~</p>
+<p>原文地址：<a href="https://suedar.github.io" target="_blank" rel="noopener">https://suedar.github.io</a><br>转载请注明出处哦~</p>
+<hr>
+<p>更多：<br><a href="http://blog.csdn.net/suedar1/article/details/78685806" target="_blank" rel="noopener">js基础之关于Boolean及相等运算符的隐式类型转换</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>富婆，饭饭</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://randomm.cdn.bcebos.com/blog/IMG20220901095957.jpg" alt="suedar WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://randomm.cdn.bcebos.com/blog/IMG20220901100004.jpg" alt="suedar Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/08/仿写简单的vue虚拟dom/" rel="next" title="仿写简单的vue虚拟dom">
+                <i class="fa fa-chevron-left"></i> 仿写简单的vue虚拟dom
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/01/js基础之关于Boolean及相等运算符的隐式类型转换/" rel="prev" title="js基础之关于Boolean及相等运算符的隐式类型转换">
+                js基础之关于Boolean及相等运算符的隐式类型转换 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">suedar</p>
+              <p class="site-description motion-element" itemprop="description">unjuanable</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/suedar" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="690372513@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">suedar</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

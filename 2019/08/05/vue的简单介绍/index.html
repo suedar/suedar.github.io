@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="各位同学大家好，本次分享的主要内容是关于前端历史的简单介绍，仅适用于前端零基础的初学者。 洪荒时期（1989～2006）首先我们需要知道的是，一个合格的网页是由什么构成的呢？答案是html、css和javascript，这三者分管网页的结构，样式和行为，并称为网页三要素。其中HTML决定了网页的结构和内容，CSS用来设定了网页的表现样式，javascript用来控制网页的行为。本文主要讲述Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端历史小记（该文作废）">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/vue的简单介绍/index.html">
+<meta property="og:site_name" content="suedar">
+<meta property="og:description" content="各位同学大家好，本次分享的主要内容是关于前端历史的简单介绍，仅适用于前端零基础的初学者。 洪荒时期（1989～2006）首先我们需要知道的是，一个合格的网页是由什么构成的呢？答案是html、css和javascript，这三者分管网页的结构，样式和行为，并称为网页三要素。其中HTML决定了网页的结构和内容，CSS用来设定了网页的表现样式，javascript用来控制网页的行为。本文主要讲述Java">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-ed02785797334fa618a9d8abbe0e09aa_hd.jpg">
+<meta property="og:updated_time" content="2022-09-01T01:40:52.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端历史小记（该文作废）">
+<meta name="twitter:description" content="各位同学大家好，本次分享的主要内容是关于前端历史的简单介绍，仅适用于前端零基础的初学者。 洪荒时期（1989～2006）首先我们需要知道的是，一个合格的网页是由什么构成的呢？答案是html、css和javascript，这三者分管网页的结构，样式和行为，并称为网页三要素。其中HTML决定了网页的结构和内容，CSS用来设定了网页的表现样式，javascript用来控制网页的行为。本文主要讲述Java">
+<meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-ed02785797334fa618a9d8abbe0e09aa_hd.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/05/vue的简单介绍/">
+
+
+
+
+
+  <title>前端历史小记（该文作废） | suedar</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?04acd03f2862eda6ef92ca8e9870077f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">suedar</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/vue的简单介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suedar">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="suedar">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端历史小记（该文作废）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T14:17:01+08:00">
+                2019-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>各位同学大家好，本次分享的主要内容是关于前端历史的简单介绍，仅适用于前端零基础的初学者。</p>
+<h3 id="洪荒时期（1989～2006）"><a href="#洪荒时期（1989～2006）" class="headerlink" title="洪荒时期（1989～2006）"></a>洪荒时期（1989～2006）</h3><p>首先我们需要知道的是，一个合格的网页是由什么构成的呢？<br>答案是<code>html</code>、<code>css</code>和<code>javascript</code>，这三者分管网页的结构，样式和行为，并称为网页三要素。其中<code>HTML</code>决定了网页的结构和内容，<code>CSS</code>用来设定了网页的表现样式，<code>javascript</code>用来控制网页的行为。本文主要讲述<code>JavaScript</code>的发展。<code>JavaScript</code>是一种处理网页的脚本语言。尽管它的名字和<code>Java</code>类似，但是它是由网景公司开发的而不是由太阳计算机系统公司开发的，除了两者的语法都是从C语言发展而来这一点外，它们之间几乎没有什么关系。之所以叫<code>JavaScript</code>，只是当时网景公司希望能借助<code>Java</code>的名气推广它, 也就是传说中的蹭热点～由于网页浏览器中，<code>JavaScript</code>与文档对象模型（<code>Document Object Model</code>）紧密结合，能够很好地处理网页，使得它比它的作者原本预期的要有用得多。它的用途可以用术语<code>DHTML</code>（动态<code>HTML</code>）表达，以强调它和静态<code>HTML</code>网页的区别。</p>
+<p>而<code>ECMAScript</code>是<code>JavaScript</code>的标准版本，<code>es</code>是<code>ECMAScript</code>的简称。由于JavaScript是个在10天创立出来的语言，所以，不可避免地有诸多纰漏，在后续的版本迭代中，我们希望去逐渐修复它。在2015年<code>es6</code>发布，2016<code>es7</code>发布，以此类推。</p>
+<p>英国科学家蒂姆·伯纳斯-李于1989年发明了万维网。而后网景公司发布了第一款商业浏览器<code>Navigator</code>。<br><img src="https://pic3.zhimg.com/80/v2-ed02785797334fa618a9d8abbe0e09aa_hd.jpg" alt="（1994 年，网景浏览器的截图）"></p>
+<center>（1994 年，网景浏览器的截图）</center>
+
+<p>而后爆发了浏览器大战，第一时期为1998年微软公司的Internet Explorer取代网景公司的Netscape Navigator成为主要浏览器。第二时期为2003年后Internet Explorer份额逐渐受到其他浏览器蚕食，包括Mozilla Firefox，Google Chrome，Safari和Opera。若是众多浏览器按照不同的标准开发的话，前端会有繁复的兼容性问题。</p>
+<p>比如我们要写一个事件绑定的函数，兼容所有浏览器。（该方法称为<code>特征检测</code>）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 该方法来自《JavaScript高级程序设计》</span></span><br><span class="line"><span class="keyword">var</span> eventUtil = &#123;</span><br><span class="line">    add: <span class="function"><span class="keyword">function</span>(<span class="params">el, type, handler</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (el.addEventListener) &#123; <span class="comment">// DOM2</span></span><br><span class="line">            el.addEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (el.attachEvent) &#123;</span><br><span class="line">            el.attachEvent(<span class="string">'on'</span> + type, handler); <span class="comment">// ie</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            el[<span class="string">'on'</span> + type] = handler; <span class="comment">// DOM0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    off: <span class="function"><span class="keyword">function</span>(<span class="params">el, type, handler</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (el.removeEventListener) &#123;</span><br><span class="line">            el.removeEventListener(type, handler, <span class="literal">false</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (el.detachEvent) &#123;</span><br><span class="line">            el.detachEvent(type, handler);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            el[<span class="string">'on'</span> + type] = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="jQuery时期（2006～2016）"><a href="#jQuery时期（2006～2016）" class="headerlink" title="jQuery时期（2006～2016）"></a>jQuery时期（2006～2016）</h3><p>我们知道，JavaScript是一门解释性语言，执行速度要比编译型语言慢得多，所以性能优化尤其重要。2006年到2016年，那是jquery的时代，其声称能提升性能并解决浏览器兼容性问题。</p>
+<p>但是，随着硬件设备和浏览器的发展，页面展示从原来的静态页面展示变得越来越多样化，需求在增长，时代在变革，一个页面需要依赖的模块越来越多，于是会引入十多个乃至几十个jQuery插件，页面上塞满了Script标签。众所周知，浏览器是单线程，Script的加载，会影响到页面的解析与呈现，导致著名的白屏问题。jQuery另一个问题是全局污染，由于插件的质量问题，或者开发的素质问题，这已经是IIEF模块或命名空间等传统手段无法解决了。（<a href="https://zhuanlan.zhihu.com/p/68030183" target="_blank" rel="noopener">《前端开发 20 年变迁史》</a>）</p>
+<h3 id="三大框架时期（2016～至今）"><a href="#三大框架时期（2016～至今）" class="headerlink" title="三大框架时期（2016～至今）"></a>三大框架时期（2016～至今）</h3><p>那么，怎么解决模块越来越多的问题呢？模块层出不穷，模块管理工具亦如雨后春笋般出现，现在成为主流的</p>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%A7%E6%88%98" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%A7%E6%88%98</a><br><br><a href="https://zhuanlan.zhihu.com/p/68030183" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/68030183</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>富婆，饭饭</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://randomm.cdn.bcebos.com/blog/IMG20220901095957.jpg" alt="suedar WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://randomm.cdn.bcebos.com/blog/IMG20220901100004.jpg" alt="suedar Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/24/record-19-07/" rel="next" title="record-19-07～19-08">
+                <i class="fa fa-chevron-left"></i> record-19-07～19-08
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/11/Json-server-mockjs模拟假数据/" rel="prev" title="Json-server + mockjs模拟假数据">
+                Json-server + mockjs模拟假数据 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">suedar</p>
+              <p class="site-description motion-element" itemprop="description">unjuanable</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/suedar" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="690372513@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#洪荒时期（1989～2006）"><span class="nav-number">1.</span> <span class="nav-text">洪荒时期（1989～2006）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery时期（2006～2016）"><span class="nav-number">2.</span> <span class="nav-text">jQuery时期（2006～2016）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三大框架时期（2016～至今）"><span class="nav-number">3.</span> <span class="nav-text">三大框架时期（2016～至今）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">suedar</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
