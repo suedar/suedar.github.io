@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="suedar">
 <meta property="og:description" content="1, 微前端概述   巨石应用：将所有功能都部署在一个web容器中运行的系统。   微前端：微前端架构是一种类似于微服务的架构，由 ThoughtWorks 2016年提出，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。   [图片]   为了防止概念有点抽象，可以看一个具体的例子：上图是一个微前端的demo，主应用中有导航栏和左边的侧边栏">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2022/10/17/images/micro-app/img_1.png">
-<meta property="og:image" content="http://yoursite.com/2022/10/17/images/micro-app/img.png">
-<meta property="og:image" content="http://yoursite.com/2022/10/17/images/micro-app/img_2.png">
-<meta property="og:updated_time" content="2022-10-17T09:38:14.868Z">
+<meta property="og:image" content="https://randomm.cdn.bcebos.com/micro-app/img_1.png">
+<meta property="og:image" content="https://randomm.cdn.bcebos.com/micro-app/img.png">
+<meta property="og:image" content="https://randomm.cdn.bcebos.com/micro-app/img_2.png">
+<meta property="og:updated_time" content="2022-10-17T09:56:27.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微前端方案调研">
 <meta name="twitter:description" content="1, 微前端概述   巨石应用：将所有功能都部署在一个web容器中运行的系统。   微前端：微前端架构是一种类似于微服务的架构，由 ThoughtWorks 2016年提出，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。   [图片]   为了防止概念有点抽象，可以看一个具体的例子：上图是一个微前端的demo，主应用中有导航栏和左边的侧边栏">
-<meta name="twitter:image" content="http://yoursite.com/2022/10/17/images/micro-app/img_1.png">
+<meta name="twitter:image" content="https://randomm.cdn.bcebos.com/micro-app/img_1.png">
 
 
 
@@ -343,7 +343,7 @@
       
 
       
-        <h1 id="1-微前端概述"><a href="#1-微前端概述" class="headerlink" title="1, 微前端概述"></a>1, 微前端概述</h1><p>   巨石应用：将所有功能都部署在一个web容器中运行的系统。<br>   微前端：微前端架构是一种类似于微服务的架构，由 ThoughtWorks 2016年提出，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。<br>   <img src="../images/micro-app/img_1.png" alt="img_1.png">[图片]<br>   为了防止概念有点抽象，可以看一个具体的例子：上图是一个微前端的demo，主应用中有导航栏和左边的侧边栏组件，而右面是子应用部分，这里的子应用并没有集成在主应用中，只是通过微前端的框架内嵌到主应用中，可是给用户的感受就是一个完整的项目。</p>
+        <h1 id="1-微前端概述"><a href="#1-微前端概述" class="headerlink" title="1, 微前端概述"></a>1, 微前端概述</h1><p>   巨石应用：将所有功能都部署在一个web容器中运行的系统。<br>   微前端：微前端架构是一种类似于微服务的架构，由 ThoughtWorks 2016年提出，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。<br>   <img src="https://randomm.cdn.bcebos.com/micro-app/img_1.png" alt="img_1.png">[图片]<br>   为了防止概念有点抽象，可以看一个具体的例子：上图是一个微前端的demo，主应用中有导航栏和左边的侧边栏组件，而右面是子应用部分，这里的子应用并没有集成在主应用中，只是通过微前端的框架内嵌到主应用中，可是给用户的感受就是一个完整的项目。</p>
 <h1 id="2-微前端的应用场景"><a href="#2-微前端的应用场景" class="headerlink" title="2, 微前端的应用场景"></a>2, 微前端的应用场景</h1><p>   任何新技术的产生都是为了解决现有场景和需求下的技术痛点，微前端也不例外：</p>
 <ol>
 <li>拆分和细化：当下前端领域，单页面应用（SPA）是非常流行的项目形态之一，而随着时间的推移以及应用功能的丰富，单页应用变得不再单一而是越来越庞大也越来越难以维护，往往是改一处而动全身，由此带来的发版成本也越来越高。微前端的意义就是将这些庞大应用进行拆分，并随之解耦，每个部分可以单独进行维护和部署，提升效率。</li>
@@ -356,8 +356,8 @@
 <li>增量升级：在面对各种复杂场景时，我们通常很难对一个已经存在的系统做全量的技术栈升级或重构，而微前端是一种非常好的实施渐进式重构的手段和策略</li>
 <li>独立运行时：每个微应用之间状态隔离，运行时状态不共享<h1 id="3-微前端实现方案"><a href="#3-微前端实现方案" class="headerlink" title="3. 微前端实现方案"></a>3. 微前端实现方案</h1></li>
 </ul>
-<p><img src="../images/micro-app/img.png" alt="img.png"></p>
-<h1 id="4-微前端实现解析"><a href="#4-微前端实现解析" class="headerlink" title="4. 微前端实现解析"></a>4. 微前端实现解析</h1><p>   <img src="../images/micro-app/img_2.png" alt="img_2.png">[图片]<br>   微前端首先通过对主 parcel 项目进行集成，对微应用进行 umd 打包，集成到主 parcel 项目上。在运行时，首先会进行注册信息的加载，其次是主工程的初始化，监听路由变化，通过改写 history API 实现子应用的加载，从而实现子应用的挂载、卸载等。</p>
+<p><img src="https://randomm.cdn.bcebos.com/micro-app/img.png" alt="img.png"></p>
+<h1 id="4-微前端实现解析"><a href="#4-微前端实现解析" class="headerlink" title="4. 微前端实现解析"></a>4. 微前端实现解析</h1><p>   <img src="https://randomm.cdn.bcebos.com/micro-app/img_2.png" alt="img_2.png">[图片]<br>   微前端首先通过对主 parcel 项目进行集成，对微应用进行 umd 打包，集成到主 parcel 项目上。在运行时，首先会进行注册信息的加载，其次是主工程的初始化，监听路由变化，通过改写 history API 实现子应用的加载，从而实现子应用的挂载、卸载等。</p>
 <p>在其中我们需要关注样式隔离、js 沙盒问题以及系统通信问题。</p>
 <h2 id="4-1-css-隔离"><a href="#4-1-css-隔离" class="headerlink" title="4.1 css 隔离"></a>4.1 css 隔离</h2><h3 id="4-1-1-shadow-DOM"><a href="#4-1-1-shadow-DOM" class="headerlink" title="4.1.1 shadow DOM"></a>4.1.1 shadow DOM</h3><p>shadow DOM 并不是一个特别新的概念，html中的video标签就是使用shadow DOM的一个案例。使用它时，你在html只会看到一个video标签，但实际上播放器上还有一系列按钮和其他操作，这些就都是封装到shadow dom中的，对外界是不可见的。所以Shadow DOM天然实现了样式隔离。</p>
 <h3 id="4-1-2-Dynamic-Stylesheet"><a href="#4-1-2-Dynamic-Stylesheet" class="headerlink" title="4.1.2 Dynamic Stylesheet"></a>4.1.2 Dynamic Stylesheet</h3><p>动态插入/移除样式DOM, 没错，这是一个及其简单的方式。原理是浏览器会对所有的样式表的插入、移除做整个 CSSOM 的重构，从而达到 插入、卸载 样式的目的</p>
