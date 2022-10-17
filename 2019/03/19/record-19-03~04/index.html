@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="3.19标题右端浮动问题 你需要知道的浮动二三事      See the Pen    2019-03-01 by cookie (@suedar)   on CodePen.    右端浮动占位 使用width失效 设置上高度即可 flex布局宽度不定 无法使用网格布局  用margin-right？ 3.21周五啦 async函数返回问题 https://stackoverflow.com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[record]19-03~04">
+<meta property="og:url" content="http://yoursite.com/2019/03/19/record-19-03~04/index.html">
+<meta property="og:site_name" content="suedar">
+<meta property="og:description" content="3.19标题右端浮动问题 你需要知道的浮动二三事      See the Pen    2019-03-01 by cookie (@suedar)   on CodePen.    右端浮动占位 使用width失效 设置上高度即可 flex布局宽度不定 无法使用网格布局  用margin-right？ 3.21周五啦 async函数返回问题 https://stackoverflow.com">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://baubug.cdn.bcebos.com/屏幕快照 2019-03-19 下午4.48.49.png">
+<meta property="og:image" content="https://randomm.cdn.bcebos.com/display.png">
+<meta property="og:image" content="https://randomm.gz.bcebos.com/test.png">
+<meta property="og:image" content="https://randomm.gz.bcebos.com/WechatIMG10.jpeg">
+<meta property="og:image" content="https://randomm.gz.bcebos.com/WechatIMG8.jpeg">
+<meta property="og:image" content="https://randomm.gz.bcebos.com/WechatIMG7.jpeg">
+<meta property="og:image" content="https://randomm.gz.bcebos.com/WechatIMG6.jpeg">
+<meta property="og:updated_time" content="2022-09-01T01:40:52.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[record]19-03~04">
+<meta name="twitter:description" content="3.19标题右端浮动问题 你需要知道的浮动二三事      See the Pen    2019-03-01 by cookie (@suedar)   on CodePen.    右端浮动占位 使用width失效 设置上高度即可 flex布局宽度不定 无法使用网格布局  用margin-right？ 3.21周五啦 async函数返回问题 https://stackoverflow.com">
+<meta name="twitter:image" content="https://baubug.cdn.bcebos.com/屏幕快照 2019-03-19 下午4.48.49.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/19/record-19-03~04/">
+
+
+
+
+
+  <title>[record]19-03~04 | suedar</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?04acd03f2862eda6ef92ca8e9870077f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">suedar</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/record-19-03~04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suedar">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="suedar">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">[record]19-03~04</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-19T15:24:42+08:00">
+                2019-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="3-19"><a href="#3-19" class="headerlink" title="3.19"></a>3.19</h2><h3 id="标题右端浮动问题"><a href="#标题右端浮动问题" class="headerlink" title="标题右端浮动问题"></a><del>标题右端浮动问题</del></h3><blockquote>
+<p><a href="https://suedar.github.io/2019/03/20/%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E6%B5%AE%E5%8A%A8%E4%BA%8C%E4%B8%89%E4%BA%8B/" target="_blank" rel="noopener">你需要知道的浮动二三事</a></p>
+</blockquote>
+
+<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="suedar" data-slug-hash="VRBXwd" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="2019-03-01">
+  <span>See the Pen <a href="https://codepen.io/suedar/pen/VRBXwd/" target="_blank" rel="noopener">
+  2019-03-01</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)
+  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p>右端浮动占位 使用width失效 设置上高度即可</p>
+<h3 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h3><p>宽度不定 无法使用网格布局</p>
+<p><img src="https://baubug.cdn.bcebos.com/屏幕快照 2019-03-19 下午4.48.49.png" alt></p>
+<p>用margin-right？</p>
+<h2 id="3-21"><a href="#3-21" class="headerlink" title="3.21"></a>3.21</h2><p>周五啦</p>
+<h3 id="async函数返回问题"><a href="#async函数返回问题" class="headerlink" title="async函数返回问题"></a><del>async函数返回问题</del></h3><blockquote>
+<p><a href="https://stackoverflow.com/questions/55293336/why-i-get-pending-from-this-function" target="_blank" rel="noopener">https://stackoverflow.com/questions/55293336/why-i-get-pending-from-this-function</a></p>
+</blockquote>
+<div style="color: red">async函数返回promise</div>
+
+<h3 id="怎么深入响应式监控state的数据"><a href="#怎么深入响应式监控state的数据" class="headerlink" title="怎么深入响应式监控state的数据"></a>怎么深入响应式监控state的数据</h3><blockquote>
+<p><a href="https://stackoverflow.com/questions/55295528/how-do-i-monitor-a-deep-value-in-object-while-using-vuex" target="_blank" rel="noopener">https://stackoverflow.com/questions/55295528/how-do-i-monitor-a-deep-value-in-object-while-using-vuex</a></p>
+</blockquote>
+<h2 id="3-25"><a href="#3-25" class="headerlink" title="3.25"></a>3.25</h2><p>上班啦</p>
+<h3 id="form表单验证是怎么实现的"><a href="#form表单验证是怎么实现的" class="headerlink" title="form表单验证是怎么实现的"></a>form表单验证是怎么实现的</h3><h3 id="less-sass-scss-区别"><a href="#less-sass-scss-区别" class="headerlink" title="less sass scss 区别"></a>less sass scss 区别</h3><h2 id="3-27"><a href="#3-27" class="headerlink" title="3.27"></a>3.27</h2><h3 id="border导致位置挪动问题"><a href="#border导致位置挪动问题" class="headerlink" title="border导致位置挪动问题"></a>border导致位置挪动问题</h3><blockquote>
+<p><a href="https://stackoverflow.com/questions/55369507/why-is-the-position-change" target="_blank" rel="noopener">https://stackoverflow.com/questions/55369507/why-is-the-position-change</a></p>
+</blockquote>
+<h3 id="nginx走缓存"><a href="#nginx走缓存" class="headerlink" title="nginx走缓存"></a><del>nginx走缓存</del></h3><p>location = /index.html {<br>    add_header Cache-Control “no-cache, no-store”;<br>}</p>
+<h3 id="顺畅的scroll-smooth"><a href="#顺畅的scroll-smooth" class="headerlink" title="顺畅的scroll-smooth"></a>顺畅的scroll-smooth</h3><blockquote>
+<p><a href="https://www.youtube.com/watch?v=y9nlfqT4s9s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=y9nlfqT4s9s</a></p>
+</blockquote>
+<p>可以写个blog</p>
+<p>在html设置 {<br>    height: 100vh;<br>    overflow: hidden;<br>}</p>
+<p>在父级设置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow-y</span>: <span class="selector-tag">scroll</span>;</span><br><span class="line"><span class="selector-tag">scroll-behavior</span>: <span class="selector-tag">smooth</span>;</span><br><span class="line"><span class="selector-tag">scroll-snap-type</span>: <span class="selector-tag">y</span> <span class="selector-tag">mandatory</span>;</span><br></pre></td></tr></table></figure>
+<p>子级</p>
+<p><code>scroll-snap-align: center;</code></p>
+<p>啊 我的毕设啊QAQ</p>
+<h2 id="3-28"><a href="#3-28" class="headerlink" title="3.28"></a>3.28</h2><h3 id="ie中jq的addclass不起作用"><a href="#ie中jq的addclass不起作用" class="headerlink" title="ie中jq的addclass不起作用"></a><del>ie中jq的addclass不起作用</del></h3><blockquote>
+<p><a href="https://stackoverflow.com/questions/17060531/addclass-removeclass-not-working-in-ie" target="_blank" rel="noopener">https://stackoverflow.com/questions/17060531/addclass-removeclass-not-working-in-ie</a></p>
+</blockquote>
+<h2 id="4-2"><a href="#4-2" class="headerlink" title="4.2"></a>4.2</h2><h3 id="flutter"><a href="#flutter" class="headerlink" title="flutter"></a>flutter</h3><p>貌似是安卓的东西 了解一下跟react native的关系</p>
+<h2 id="4-5"><a href="#4-5" class="headerlink" title="4.5"></a>4.5</h2><h3 id="无法在codepen复现的伪元素问题"><a href="#无法在codepen复现的伪元素问题" class="headerlink" title="无法在codepen复现的伪元素问题"></a>无法在codepen复现的伪元素问题</h3><p></p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="suedar" data-slug-hash="oOxEzG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Pseudo bug"><br>  <span>See the Pen <a href="https://codepen.io/suedar/pen/oOxEzG/" target="_blank" rel="noopener"><br>  Pseudo bug</a> by cookie (<a href="https://codepen.io/suedar" target="_blank" rel="noopener">@suedar</a>)<br>  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span><br></p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<p><img src="https://randomm.cdn.bcebos.com/display.png" alt></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">    <span class="selector-class">.content</span> &#123;</span><br><span class="line">        <span class="attribute">margin-top</span>: <span class="number">3vh</span>;</span><br><span class="line">    <span class="selector-class">.text</span>, <span class="selector-class">.year</span>, <span class="selector-class">.year-item</span> &#123;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">padding-left</span>: <span class="number">3rem</span>;</span><br><span class="line">        <span class="attribute">border-left</span>: <span class="number">3px</span> solid <span class="variable">$greyWhite</span>;</span><br><span class="line">        <span class="attribute">position</span>: relative;</span><br><span class="line">        &amp;::after &#123;</span><br><span class="line">            <span class="attribute">color</span>: <span class="variable">$dot</span>;</span><br><span class="line">            <span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">transform</span>: translate(-<span class="number">67%</span>, -<span class="number">50%</span>);</span><br><span class="line">            <span class="attribute">content</span>: <span class="string">'●'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.text</span> &#123;</span><br><span class="line">        &amp;::after &#123;</span><br><span class="line">            <span class="attribute">font-size</span>: <span class="number">28px</span>;</span><br><span class="line">            <span class="comment">// <span class="doctag">BUG:</span> 定位问题</span></span><br><span class="line">            <span class="attribute">transform</span>: translate(-<span class="number">57%</span>, -<span class="number">56%</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.dot</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text dot"</span>&gt;</span></span><br><span class="line">        这块地方一共有&#123;&#123;length&#125;&#125;篇文章</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"menu-item"</span> <span class="attr">v-for</span>=<span class="string">"item in year"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"year dot"</span>&gt;</span></span><br><span class="line">            &#123;&#123;item&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"year-item dot"</span> <span class="attr">v-for</span>=<span class="string">"menuItem in menu[item]"</span> <span class="attr">:key</span>=<span class="string">"menuItem.id"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"date"</span>&gt;</span></span><br><span class="line">                &#123;&#123;menuItem.date&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">                &#123;&#123;menuItem.title&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-16"><a href="#4-16" class="headerlink" title="4.16"></a>4.16</h2><h3 id="curry"><a href="#curry" class="headerlink" title="curry"></a>curry</h3><p><img src="https://randomm.gz.bcebos.com/test.png" alt></p>
+<h3 id="我看了一下css大会的东西"><a href="#我看了一下css大会的东西" class="headerlink" title="我看了一下css大会的东西"></a>我看了一下css大会的东西</h3><p><img src="https://randomm.gz.bcebos.com/WechatIMG10.jpeg" alt><br><img src="https://randomm.gz.bcebos.com/WechatIMG8.jpeg" alt><br><img src="https://randomm.gz.bcebos.com/WechatIMG7.jpeg" alt><br><img src="https://randomm.gz.bcebos.com/WechatIMG6.jpeg" alt></p>
+<h2 id="4-22"><a href="#4-22" class="headerlink" title="4.22"></a>4.22</h2><h3 id="grid布局可以自动紧缩吗"><a href="#grid布局可以自动紧缩吗" class="headerlink" title="grid布局可以自动紧缩吗"></a>grid布局可以自动紧缩吗</h3><blockquote>
+<p><a href="https://stackoverflow.com/questions/55793415/how-to-make-the-elements-of-unknown-location-compact" target="_blank" rel="noopener">https://stackoverflow.com/questions/55793415/how-to-make-the-elements-of-unknown-location-compact</a></p>
+</blockquote>
+<h2 id="4-23"><a href="#4-23" class="headerlink" title="4.23"></a>4.23</h2><h3 id="屏幕支持"><a href="#屏幕支持" class="headerlink" title="屏幕支持"></a>屏幕支持</h3><p>According to <a href="https://codepen.io/mor10/pen/NjeqyX" target="_blank" rel="noopener">this website</a>, I think</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">800px</span>) &#123;&#125;</span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">1200px</span>) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>can support for 三端</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>富婆，饭饭</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://randomm.cdn.bcebos.com/blog/IMG20220901095957.jpg" alt="suedar WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://randomm.cdn.bcebos.com/blog/IMG20220901100004.jpg" alt="suedar Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/25/bug-repair-element打包后css样式不正常/" rel="next" title="[bug repair]element打包后css样式不正常">
+                <i class="fa fa-chevron-left"></i> [bug repair]element打包后css样式不正常
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/20/你需要知道的浮动二三事/" rel="prev" title="你需要知道的浮动二三事">
+                你需要知道的浮动二三事 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">suedar</p>
+              <p class="site-description motion-element" itemprop="description">unjuanable</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/suedar" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="690372513@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-19"><span class="nav-number">1.</span> <span class="nav-text">3.19</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题右端浮动问题"><span class="nav-number">1.1.</span> <span class="nav-text">标题右端浮动问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex布局"><span class="nav-number">1.2.</span> <span class="nav-text">flex布局</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-21"><span class="nav-number">2.</span> <span class="nav-text">3.21</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#async函数返回问题"><span class="nav-number">2.1.</span> <span class="nav-text">async函数返回问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么深入响应式监控state的数据"><span class="nav-number">2.2.</span> <span class="nav-text">怎么深入响应式监控state的数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-25"><span class="nav-number">3.</span> <span class="nav-text">3.25</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#form表单验证是怎么实现的"><span class="nav-number">3.1.</span> <span class="nav-text">form表单验证是怎么实现的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#less-sass-scss-区别"><span class="nav-number">3.2.</span> <span class="nav-text">less sass scss 区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-27"><span class="nav-number">4.</span> <span class="nav-text">3.27</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#border导致位置挪动问题"><span class="nav-number">4.1.</span> <span class="nav-text">border导致位置挪动问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx走缓存"><span class="nav-number">4.2.</span> <span class="nav-text">nginx走缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺畅的scroll-smooth"><span class="nav-number">4.3.</span> <span class="nav-text">顺畅的scroll-smooth</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-28"><span class="nav-number">5.</span> <span class="nav-text">3.28</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ie中jq的addclass不起作用"><span class="nav-number">5.1.</span> <span class="nav-text">ie中jq的addclass不起作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2"><span class="nav-number">6.</span> <span class="nav-text">4.2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flutter"><span class="nav-number">6.1.</span> <span class="nav-text">flutter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5"><span class="nav-number">7.</span> <span class="nav-text">4.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法在codepen复现的伪元素问题"><span class="nav-number">7.1.</span> <span class="nav-text">无法在codepen复现的伪元素问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-16"><span class="nav-number">8.</span> <span class="nav-text">4.16</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#curry"><span class="nav-number">8.1.</span> <span class="nav-text">curry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我看了一下css大会的东西"><span class="nav-number">8.2.</span> <span class="nav-text">我看了一下css大会的东西</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-22"><span class="nav-number">9.</span> <span class="nav-text">4.22</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grid布局可以自动紧缩吗"><span class="nav-number">9.1.</span> <span class="nav-text">grid布局可以自动紧缩吗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-23"><span class="nav-number">10.</span> <span class="nav-text">4.23</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕支持"><span class="nav-number">10.1.</span> <span class="nav-text">屏幕支持</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">suedar</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

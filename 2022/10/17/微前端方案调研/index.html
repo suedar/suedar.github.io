@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1, 微前端概述   巨石应用：将所有功能都部署在一个web容器中运行的系统。   微前端：微前端架构是一种类似于微服务的架构，由 ThoughtWorks 2016年提出，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。   [图片]   为了防止概念有点抽象，可以看一个具体的例子：上图是一个微前端的demo，主应用中有导航栏和左边的侧边栏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微前端方案调研">
+<meta property="og:url" content="http://yoursite.com/2022/10/17/微前端方案调研/index.html">
+<meta property="og:site_name" content="suedar">
+<meta property="og:description" content="1, 微前端概述   巨石应用：将所有功能都部署在一个web容器中运行的系统。   微前端：微前端架构是一种类似于微服务的架构，由 ThoughtWorks 2016年提出，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。   [图片]   为了防止概念有点抽象，可以看一个具体的例子：上图是一个微前端的demo，主应用中有导航栏和左边的侧边栏">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2022/10/17/images/micro-app/img_1.png">
+<meta property="og:image" content="http://yoursite.com/2022/10/17/images/micro-app/img.png">
+<meta property="og:image" content="http://yoursite.com/2022/10/17/images/micro-app/img_2.png">
+<meta property="og:updated_time" content="2022-10-17T09:38:14.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微前端方案调研">
+<meta name="twitter:description" content="1, 微前端概述   巨石应用：将所有功能都部署在一个web容器中运行的系统。   微前端：微前端架构是一种类似于微服务的架构，由 ThoughtWorks 2016年提出，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。   [图片]   为了防止概念有点抽象，可以看一个具体的例子：上图是一个微前端的demo，主应用中有导航栏和左边的侧边栏">
+<meta name="twitter:image" content="http://yoursite.com/2022/10/17/images/micro-app/img_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2022/10/17/微前端方案调研/">
+
+
+
+
+
+  <title>微前端方案调研 | suedar</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?04acd03f2862eda6ef92ca8e9870077f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">suedar</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/10/17/微前端方案调研/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suedar">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="suedar">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微前端方案调研</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-10-17T17:29:12+08:00">
+                2022-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-微前端概述"><a href="#1-微前端概述" class="headerlink" title="1, 微前端概述"></a>1, 微前端概述</h1><p>   巨石应用：将所有功能都部署在一个web容器中运行的系统。<br>   微前端：微前端架构是一种类似于微服务的架构，由 ThoughtWorks 2016年提出，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。<br>   <img src="../images/micro-app/img_1.png" alt="img_1.png">[图片]<br>   为了防止概念有点抽象，可以看一个具体的例子：上图是一个微前端的demo，主应用中有导航栏和左边的侧边栏组件，而右面是子应用部分，这里的子应用并没有集成在主应用中，只是通过微前端的框架内嵌到主应用中，可是给用户的感受就是一个完整的项目。</p>
+<h1 id="2-微前端的应用场景"><a href="#2-微前端的应用场景" class="headerlink" title="2, 微前端的应用场景"></a>2, 微前端的应用场景</h1><p>   任何新技术的产生都是为了解决现有场景和需求下的技术痛点，微前端也不例外：</p>
+<ol>
+<li>拆分和细化：当下前端领域，单页面应用（SPA）是非常流行的项目形态之一，而随着时间的推移以及应用功能的丰富，单页应用变得不再单一而是越来越庞大也越来越难以维护，往往是改一处而动全身，由此带来的发版成本也越来越高。微前端的意义就是将这些庞大应用进行拆分，并随之解耦，每个部分可以单独进行维护和部署，提升效率。</li>
+<li>整合历史系统：在不少的业务中，或多或少会存在一些历史项目，这些项目大多以采用老框架类似（Backbone.js，Angular.js 1）的 B 端管理系统为主，介于日常运营，这些系统需要结合到新框架中来使用还不能抛弃，对此我们也没有理由浪费时间和精力重写旧的逻辑。而微前端可以将这些系统进行整合，在基本不修改来逻辑的同时来同时兼容新老两套系统并行运行。</li>
+</ol>
+<p>微前端架构具备以下几个核心价值：</p>
+<ul>
+<li>技术栈无关：主框架不限制接入应用的技术栈，微应用具备完全自主权</li>
+<li>独立开发、独立部署：微应用仓库独立，前后端可独立开发，部署完成后主框架自动完成同步更新</li>
+<li>增量升级：在面对各种复杂场景时，我们通常很难对一个已经存在的系统做全量的技术栈升级或重构，而微前端是一种非常好的实施渐进式重构的手段和策略</li>
+<li>独立运行时：每个微应用之间状态隔离，运行时状态不共享<h1 id="3-微前端实现方案"><a href="#3-微前端实现方案" class="headerlink" title="3. 微前端实现方案"></a>3. 微前端实现方案</h1></li>
+</ul>
+<p><img src="../images/micro-app/img.png" alt="img.png"></p>
+<h1 id="4-微前端实现解析"><a href="#4-微前端实现解析" class="headerlink" title="4. 微前端实现解析"></a>4. 微前端实现解析</h1><p>   <img src="../images/micro-app/img_2.png" alt="img_2.png">[图片]<br>   微前端首先通过对主 parcel 项目进行集成，对微应用进行 umd 打包，集成到主 parcel 项目上。在运行时，首先会进行注册信息的加载，其次是主工程的初始化，监听路由变化，通过改写 history API 实现子应用的加载，从而实现子应用的挂载、卸载等。</p>
+<p>在其中我们需要关注样式隔离、js 沙盒问题以及系统通信问题。</p>
+<h2 id="4-1-css-隔离"><a href="#4-1-css-隔离" class="headerlink" title="4.1 css 隔离"></a>4.1 css 隔离</h2><h3 id="4-1-1-shadow-DOM"><a href="#4-1-1-shadow-DOM" class="headerlink" title="4.1.1 shadow DOM"></a>4.1.1 shadow DOM</h3><p>shadow DOM 并不是一个特别新的概念，html中的video标签就是使用shadow DOM的一个案例。使用它时，你在html只会看到一个video标签，但实际上播放器上还有一系列按钮和其他操作，这些就都是封装到shadow dom中的，对外界是不可见的。所以Shadow DOM天然实现了样式隔离。</p>
+<h3 id="4-1-2-Dynamic-Stylesheet"><a href="#4-1-2-Dynamic-Stylesheet" class="headerlink" title="4.1.2 Dynamic Stylesheet"></a>4.1.2 Dynamic Stylesheet</h3><p>动态插入/移除样式DOM, 没错，这是一个及其简单的方式。原理是浏览器会对所有的样式表的插入、移除做整个 CSSOM 的重构，从而达到 插入、卸载 样式的目的</p>
+<h2 id="4-2-js-隔离"><a href="#4-2-js-隔离" class="headerlink" title="4.2 js 隔离"></a>4.2 js 隔离</h2><h3 id="4-2-1-快照方式"><a href="#4-2-1-快照方式" class="headerlink" title="4.2.1 快照方式"></a>4.2.1 快照方式</h3><p>在创建微应用的时候会实例化一个沙盒对象，它有两个方法，active是在激活微应用的时候执行，而inactive是在离开微应用的时候执行。</p>
+<p>整体的思路是在激活微应用时将当前的window对象拷贝存起来，然后从modifyPropsMap中恢复这个微应用上次修改的属性到window中。在离开微应用时会与原有的window对象做对比，将有修改的属性保存起来，以便再次进入这个微应用时进行数据恢复，然后把有修改的属性值恢复到以前的状态。</p>
+<h3 id="4-2-2-proxy-方式"><a href="#4-2-2-proxy-方式" class="headerlink" title="4.2.2 proxy 方式"></a>4.2.2 proxy 方式</h3><p>微应用中的script内容都会加with(global)来执行，这里global是全局对象，如果是proxy的隔离方式那么他就是下面新创建的proxy对象。我们知道with可以改变里面代码的作用域，也就是我们的微应用全局对象会变成下面的这个proxy。当设置属性的时候会设置到proxy对象里，在读取属性时先从proxy里找，没找到再从原始的window中找。也就是你在微应用里修改全局对象的属性时不会在window中修改，而是在proxy对象中修改。因为不会破坏window对象，这样就会隔离各个应用之间的数据影响。</p>
+<h2 id="4-3-系统之间如何通信"><a href="#4-3-系统之间如何通信" class="headerlink" title="4.3 系统之间如何通信"></a>4.3 系统之间如何通信</h2><p>系统之间通信一般有两种方式：自定义事件和本地存储。如果是两个系统相互跳转，还可以用URL传数据。</p>
+<p>一般来说，不会同时存在A、B两个子系统，常见的数据共享就是登陆信息，登陆信息一般使用本地存储记录。另外一个常见的场景就是子系统修改了用户信息，主系统需要重新请求用户信息，这个时候一般用自定义事件通信。</p>
+<h1 id="5-微前端的更多内容"><a href="#5-微前端的更多内容" class="headerlink" title="5. 微前端的更多内容"></a>5. 微前端的更多内容</h1><blockquote>
+<p><a href="http://blog.wangminghuan.cn/%E6%B5%85%E6%9E%90qiankun%E4%B8%AD%E7%9A%84%E6%A0%B7%E5%BC%8F%E9%9A%94%E7%A6%BB%E4%B8%8EJS%E6%B2%99%E7%AE%B1%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">浅析qiankun中的样式隔离与JS沙箱机制</a><br><a href="https://juejin.cn/post/6844904048043229192#heading-0" target="_blank" rel="noopener">从0实现一个single-spa的前端微服务</a><br><a href="http://qiankun.fengxianqi.com/sub-vue" target="_blank" rel="noopener">http://qiankun.fengxianqi.com/sub-vue</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>富婆，饭饭</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://randomm.cdn.bcebos.com/blog/IMG20220901095957.jpg" alt="suedar WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://randomm.cdn.bcebos.com/blog/IMG20220901100004.jpg" alt="suedar Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/09/01/Clash调整为局部代理/" rel="next" title="Clash调整为局部代理">
+                <i class="fa fa-chevron-left"></i> Clash调整为局部代理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">suedar</p>
+              <p class="site-description motion-element" itemprop="description">unjuanable</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/suedar" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="690372513@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-微前端概述"><span class="nav-number">1.</span> <span class="nav-text">1, 微前端概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-微前端的应用场景"><span class="nav-number">2.</span> <span class="nav-text">2, 微前端的应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-微前端实现方案"><span class="nav-number">3.</span> <span class="nav-text">3. 微前端实现方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-微前端实现解析"><span class="nav-number">4.</span> <span class="nav-text">4. 微前端实现解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-css-隔离"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 css 隔离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-shadow-DOM"><span class="nav-number">4.1.1.</span> <span class="nav-text">4.1.1 shadow DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-Dynamic-Stylesheet"><span class="nav-number">4.1.2.</span> <span class="nav-text">4.1.2 Dynamic Stylesheet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-js-隔离"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 js 隔离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-快照方式"><span class="nav-number">4.2.1.</span> <span class="nav-text">4.2.1 快照方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-proxy-方式"><span class="nav-number">4.2.2.</span> <span class="nav-text">4.2.2 proxy 方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-系统之间如何通信"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 系统之间如何通信</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-微前端的更多内容"><span class="nav-number">5.</span> <span class="nav-text">5. 微前端的更多内容</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">suedar</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
